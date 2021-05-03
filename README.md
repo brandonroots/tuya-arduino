@@ -3,7 +3,7 @@ Inspired by the work of folks on [Tuya-Convert](https://github.com/ct-Open-Sourc
 
 # Tuya
 
-A Chinese company named Tuya offers a free-to-brand turnkey smart home solution to anyone. Using their offer is dead-simple, since everything can be done by clicking through the [Tuya web page](https://en.tuya.com/), from choosing your pre-designed products or pre-programmed wifi-modules (mostly ESP8266) to build your own app. In the end, this has resulted in over 11,000 devices 'made' by over 10,000 vendors using Tuya's firmware and cloud services.
+A Chinese company named Tuya offers a free-to-brand turnkey smart home solution to anyone. Using their offer is simple, since everything can be done by clicking through the [Tuya web page](https://en.tuya.com/), from choosing your pre-designed products or pre-programmed wifi-modules (mostly ESP8266) to build your own app. In the end, this has resulted in over 11,000 devices 'made' by over 10,000 vendors using Tuya's firmware and cloud services.
 
 While [Tuya-Convert](https://github.com/ct-Open-Source/tuya-convert) takes an entirely software oriented approach to reflashing firmware on Tuya modules the company has made this increasingly more difficult through firmware updates. In response this guide provides steps involved in hardware flashing a Tuya module through the Arduino IDE after some simple hardware modifications, which should work regardless of Tuya firmware version.
 
