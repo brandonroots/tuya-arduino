@@ -8,4 +8,4 @@ A Chinese company named Tuya offers a free-to-brand turnkey smart home solution 
 While [Tuya-Convert](https://github.com/ct-Open-Source/tuya-convert) takes an entirely software oriented approach to reflashing firmware on Tuya modules the company has made this increasingly more difficult through firmware updates. In response this guide provides steps involved in hardware flashing a Tuya module after some simple hardware modifications through the Arduino IDE, which should work regardless of Tuya firmware version.
 
 ## 🚨WARNING🚨
-Please be sure that you understand what you're doing before using this software. Flashing an alternative firmware can lead to unexpected behavior and/or render the device unusable, so that it might be permanently damaged (highly unlikely) or require soldering a serial connection to the processor in order to reflash it (likely).
+Please be sure that you understand what you're doing before using this guide and software. Flashing an alternative firmware and modifying hardware can lead to unexpected behavior and/or render the device unusable so that it might be permanently damaged.
