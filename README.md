@@ -1,7 +1,5 @@
 # Tuya-Arduino
-Support for flashing Tuya IoT devices through the Arduino IDE
-
-Inspired by the work of folks on - [Tuya-Convert](https://github.com/ct-Open-Source/tuya-convert), this guide takes a more direct approach to hardware hacking and flashing Tuya IoT modules. 
+Inspired by the work of folks on [Tuya-Convert](https://github.com/ct-Open-Source/tuya-convert), this guide takes a more direct approach to hardware hacking and flashing Tuya IoT modules. 
 
 # Tuya
 
