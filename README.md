@@ -16,4 +16,14 @@ Amazon is flooded with affordable smart plugs using Tuya modules and they are in
 ## 🚨WARNING🚨
 Please be sure that you understand what you're doing before using this guide and software. Flashing an alternative firmware and modifying hardware can lead to unexpected behavior and/or render the device unusable so that it might be permanently damaged.
 
-# 
+# The Hardware
+
+# Adding a Serial Port
+
+# Services
+
+## Adafruit IO
+
+## Blynk
+
+# Results
