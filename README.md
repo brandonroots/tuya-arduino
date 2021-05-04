@@ -18,14 +18,58 @@ Please be sure that you understand what you're doing before using this guide and
 
 # The Hardware
 
-[![BlynkIOScreenshot](https://brandonroots.com/wp-content/uploads/2021/03/Blynk_Socket1_00007-2048x946.png)](https://www.brandonroots.com/)
+
 
 # Adding a serial port
 
+[![TopGreener Smart Plug](https://brandonroots.com/wp-content/uploads/2021/03/TopGreener_SmartSocket_00001-1536x2048.jpg)](https://www.brandonroots.com/)
+
+A peek inside one of my Smart Plugs revealed a [TYWE2S module](https://developer.tuya.com/en/docs/iot/device-development/module/wifi-module/we-series-module/wifie2smodule?id=K9605u79tgxug), which appeared to be operating as the brains of the device and is itself an ESP8266/ESP8265 WiFi module which is easily programmed using the Arduino IDE. Further research pointed me to a GitHub effort called Tuya-Convert as a means to upload custom firmware OTA to these generic modules, however it appears from recent forum posts that a vendor firmware update has broken this technique. So instead I went straight to the hardware hacking approach.
+
+[Forum posts here from user PeteKnight](https://community.blynk.cc/t/alternative-to-sonoff-s20-eu-type-f-smart-socket/23318) outline the steps to reprogramming the TYWE2S module and provide a useful starting point with Arduino code for OTA updates.
+
+[![TYWE2S diagram](https://brandonroots.com/wp-content/uploads/2021/03/TYWE2S.png)](https://www.brandonroots.com/)
+
+Referencing the diagram pinout above for the TYWE2S my first step was soldering a header to the 3.3V, GND, RX, and TX pins.
+
+[![Header attached to TYWE2S pins](https://brandonroots.com/wp-content/uploads/2021/03/TopGreener_SmartSocket_00009-2048x1625.jpg)](https://www.brandonroots.com/)
+
+Next I soldered a small push button switch directly on the TYWE2S module between GND and the contact 100, which when pressed during boot will put the ESP module into programming mode.
+
+[![Button attached to TYWE2S for flashing](https://brandonroots.com/wp-content/uploads/2021/03/TopGreener_SmartSocket_00012-1536x2048.jpg)](https://www.brandonroots.com/)
+
+Usually efforts like this take some troubleshooting but reprogramming the board through a USB to TTL connector with the Arduino IDE went smoothly (just be sure not to have the Smart Plug connected to mains power!).
+
+[![TYWE2S header connected to USB to TTL connector to flash with Arduino IDE](https://brandonroots.com/wp-content/uploads/2021/03/TopGreener_SmartSocket_00014-2048x1536.jpg)](https://www.brandonroots.com/)
+
+The Arduino code uses a few libraries you will need to download that are available in the Arduino Libraries Manager including [ESP8266Wifi](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi), [Blynk](https://github.com/blynkkk/blynk-library) (from [vshymanskyy](https://github.com/vshymanskyy)), and [HLW8012](https://github.com/xoseperez/hlw8012) (from [xoseperez](https://github.com/xoseperez/hlw8012/commits?author=xoseperez)).
+
+[![View of HLW8012 module](https://brandonroots.com/wp-content/uploads/2021/03/TopGreener_SmartSocket_00021-2048x1536.jpg)](https://www.brandonroots.com/)
+
+An unmarked IC in the Smart Plug is responsible for measuring power use and communicating that to the ESP module. My best guess is that this is an [HLW8012](https://tinkerman.cat/post/hlw8012-ic-new-sonoff-pow/) based on other user comments and the pinout. Modifying the custom firmware to include code from [HLW8012](https://github.com/xoseperez/hlw8012) (from [xoseperez](https://github.com/xoseperez/hlw8012/commits?author=xoseperez)) seemed to confirm this, though the same code mentioned 230V mains and returned readings with half of the expected wattage. As a quick fix I adjusted the value for VOLTAGE_RESISTOR_UPSTREAM to match results from an unmodified TopGreener Smart Outlet.
+
 # Services
 
-## Adafruit IO
+To control the device and store data I initially made use of Blynk.io. It is certainly possible to setup a custom web server and by no means is it a requirement to use this service but it helped to make this process a heck of a lot easier. I have also included Arduino code and instructions for connecting to Adafruit IO.
 
 ## Blynk
 
+After downloading the Blynk smartphone app and providing an email address to create an account I was able to create a “New Project” which provides a unique Authentication Token over email to place in the Arduino code.
+
+[![Blynk IO App](https://brandonroots.com/wp-content/uploads/2021/03/Blynk_Socket1_00008-1-946x2048.png)](https://www.brandonroots.com/)
+[![Blynk IO New Project Window](https://brandonroots.com/wp-content/uploads/2021/03/Blynk_Socket1_00009-2-946x2048.png)](https://www.brandonroots.com/)
+
+From here it is a matter of adding in various widgets from the “Widget Box” including categories such as controllers, displays, notifications, device management, etc.
+
+[![Blynk IO App Smart Socket Readings](https://brandonroots.com/wp-content/uploads/2021/03/Blynk_Socket1_00010-946x2048.png)](https://www.brandonroots.com/)
+[![Blynk IO App Widget Box](https://brandonroots.com/wp-content/uploads/2021/03/Blynk_Socket1_00011-946x2048.png)](https://www.brandonroots.com/)
+
+I set mine up to include a “Button” to control power (ON/OFF) linked to Virtual Pin 1 in the Arduino Code and two displays for Virtual Pin 5 where the Arduino Code is sharing real time wattage: both a “Labeled Display” to show current wattage and a “SuperChart” to record the real time data which is conveniently available to download as a CSV file.
+
+[![Blynk IO HTTP RESTful API](https://brandonroots.com/wp-content/uploads/2021/03/Blynk-Restful-API-2048x1189.png)](https://www.brandonroots.com/)
+
+## Adafruit IO
+
 # Results
+
+[![Blynk IO Screenshot](https://brandonroots.com/wp-content/uploads/2021/03/Blynk_Socket1_00007-2048x946.png)](https://www.brandonroots.com/)
