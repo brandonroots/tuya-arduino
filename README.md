@@ -28,6 +28,7 @@ A peek inside one of my Smart Plugs revealed a [TYWE2S module](https://developer
 
 [Forum posts here from user PeteKnight](https://community.blynk.cc/t/alternative-to-sonoff-s20-eu-type-f-smart-socket/23318) outline the steps to reprogramming the TYWE2S module and provide a useful starting point with Arduino code for OTA updates.
 
+<img src="https://brandonroots.com/wp-content/uploads/2021/03/TYWE2S.png" width="300">
 [![TYWE2S diagram](https://brandonroots.com/wp-content/uploads/2021/03/TYWE2S.png)](https://www.brandonroots.com/)
 
 Referencing the diagram pinout above for the TYWE2S my first step was soldering a header to the 3.3V, GND, RX, and TX pins.
