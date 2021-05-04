@@ -18,7 +18,7 @@ Please be sure that you understand what you're doing before using this guide and
 
 # The Hardware
 
-# Adding a Serial Port
+# Adding a serial port
 
 # Services
 
