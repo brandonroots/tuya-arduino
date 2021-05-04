@@ -18,6 +18,8 @@ Please be sure that you understand what you're doing before using this guide and
 
 # The Hardware
 
+[![BlynkIOScreenshot](https://brandonroots.com/wp-content/uploads/2021/03/Blynk_Socket1_00007-2048x946.png)](https://www.brandonroots.com/)
+
 # Adding a serial port
 
 # Services
