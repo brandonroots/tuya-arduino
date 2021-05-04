@@ -42,7 +42,7 @@ Usually efforts like this take some troubleshooting but reprogramming the board 
 
 [![TYWE2S header connected to USB to TTL connector to flash with Arduino IDE](https://brandonroots.com/wp-content/uploads/2021/03/TopGreener_SmartSocket_00014-2048x1536.jpg)](https://www.brandonroots.com/)
 
-The Arduino code uses a few libraries you will need to download that are available in the Arduino Libraries Manager including [ESP8266Wifi](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi), [Blynk](https://github.com/blynkkk/blynk-library) (from [vshymanskyy](https://github.com/vshymanskyy)), and [HLW8012](https://github.com/xoseperez/hlw8012) (from [xoseperez](https://github.com/xoseperez/hlw8012/commits?author=xoseperez)).
+The Arduino code uses a few libraries you will need to download that are available in the Arduino Libraries Manager including [ESP8266Wifi](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi), [Blynk](https://github.com/blynkkk/blynk-library) (from [vshymanskyy](https://github.com/vshymanskyy)) or [Adafruit_IO_Arduino](https://github.com/adafruit/Adafruit_IO_Arduino), and [HLW8012](https://github.com/xoseperez/hlw8012) (from [xoseperez](https://github.com/xoseperez/hlw8012/commits?author=xoseperez)).
 
 [![View of HLW8012 module](https://brandonroots.com/wp-content/uploads/2021/03/TopGreener_SmartSocket_00021-2048x1536.jpg)](https://www.brandonroots.com/)
 
