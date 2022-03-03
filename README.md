@@ -24,7 +24,7 @@ Please be sure that you understand what you're doing before using this guide and
 ## Adding a serial port
 
 <img alt="" src="" width="500">
-[TopGreener Smart Plug](https://brandonroots.com/wp-content/uploads/2021/03/TopGreener_SmartSocket_00001-1536x2048.jpg)](https://www.brandonroots.com/)
+[TopGreener Smart Plug](https://brandonroots.com/wp-content/uploads/2021/03/TopGreener_SmartSocket_00001-1536x2048.jpg)(https://www.brandonroots.com/)
 
 A peek inside one of my Smart Plugs revealed a [TYWE2S module](https://developer.tuya.com/en/docs/iot/device-development/module/wifi-module/we-series-module/wifie2smodule?id=K9605u79tgxug), which appeared to be operating as the brains of the device and is itself an ESP8266/ESP8265 WiFi module which is easily programmed using the Arduino IDE. Further research pointed me to a GitHub effort called Tuya-Convert as a means to upload custom firmware OTA to these generic modules, however it appears from recent forum posts that a vendor firmware update has broken this technique. So instead I went straight to the hardware hacking approach.
 
