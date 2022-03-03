@@ -25,7 +25,7 @@ Please be sure that you understand what you're doing before using this guide and
 
 <img alt="TopGreener Smart Plug" src="https://brandonroots.com/wp-content/uploads/2021/03/TopGreener_SmartSocket_00001-1536x2048.jpg" width="500">
 
-A peek inside one of my Smart Plugs revealed a [TYWE2S module](https://developer.tuya.com/en/docs/iot/device-development/module/wifi-module/we-series-module/wifie2smodule?id=K9605u79tgxug) operating as the main microcontroller for the device. This is itself an ESP8266/ESP8265 WiFi module which is easily programmed using the Arduino IDE. Further research pointed me to a GitHub effort called Tuya-Convert as a means to upload custom firmware OTA to these generic modules, however it appears from recent forum posts that a vendor firmware update has broken this technique. So instead I went to the hardware hacking approach.
+A peek inside one of my Smart Plugs revealed a [TYWE2S module](https://developer.tuya.com/en/docs/iot/device-development/module/wifi-module/we-series-module/wifie2smodule?id=K9605u79tgxug) operating as the main microcontroller for the device. This is itself an ESP8266/ESP8265 WiFi module which is easily programmed using the Arduino IDE. Further research pointed me to a GitHub effort called Tuya-Convert as a means to upload custom firmware OTA to these generic modules, however it appears from recent forum posts that a vendor firmware update has broken this technique. This left open a hardware hacking approach.
 
 [Forum posts here from user PeteKnight](https://community.blynk.cc/t/alternative-to-sonoff-s20-eu-type-f-smart-socket/23318) outline the steps to reprogramming the TYWE2S module and provide a useful starting point with Arduino code for OTA updates.
 
